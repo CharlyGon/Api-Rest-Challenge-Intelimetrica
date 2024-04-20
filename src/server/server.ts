@@ -1,7 +1,7 @@
 import { Application } from 'express';
 import { databaseConnection } from '../db/sequelize';
 
-async function startServer(app: Application): Promise<void> {
+const startServer = async (app: Application): Promise<void> => {
     try {
         await databaseConnection();
         const port = process.env.PORT ?? 3000;
