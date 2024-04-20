@@ -1,12 +1,12 @@
 import express from "express";
-import { getAllRestaurants, getRestaurantById, createRestaurant, updateRestaurant, deleteRestaurant } from "../controllers/restaurantController";
+import { getAllRestaurantsController, getRestaurantByIdController, createRestaurantController, updateRestaurantController, deleteRestaurantController } from "../controllers/restaurantController";
 
 const router = express.Router();
 
-router.get('/restaurants', getAllRestaurants);
-router.get('/restaurants/:id', getRestaurantById);
-router.post('/restaurants', createRestaurant);
-router.put('/restaurants/:id', updateRestaurant);
-router.delete('/restaurants/:id', deleteRestaurant);
+router.get('/restaurants', getAllRestaurantsController);
+router.get('/restaurants/:id', getRestaurantByIdController);
+router.post('/restaurants', createRestaurantController);
+router.put('/restaurants/:id', updateRestaurantController);
+router.delete('/restaurants/:id', deleteRestaurantController);
 
 export default router;
