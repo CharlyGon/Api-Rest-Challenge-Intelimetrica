@@ -1,5 +1,5 @@
 import { Application } from 'express';
-import { databaseConnection } from '../db/sequelize';
+import { databaseConnection } from '../db/dbConnection';
 
 const startServer = async (app: Application): Promise<void> => {
     try {
