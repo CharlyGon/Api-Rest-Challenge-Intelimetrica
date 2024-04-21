@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 import { Restaurant } from '../models/Restaurant';
-import { getAllRestaurants, getRestaurantById, createRestaurant, updateRestaurant, deleteRestaurant } from '../service/restaurantService';
+import { getAllRestaurants, getRestaurantById, createRestaurant, updateRestaurant, deleteRestaurant } from '../service/restaurantCrudService';
 
 export const getAllRestaurantsController = async (req: Request, res: Response): Promise<void> => {
     try {
@@ -17,7 +17,7 @@ export const getRestaurantByIdController = async (req: Request, res: Response): 
     try {
         const restaurant = await getRestaurantById(id);
         if (!restaurant) {
-            res.status(404).json({ message: 'Restaurante no encontrado' });
+            res.status(404).json({ message: 'Restaurante no encontrado GET BY ID' });
             return;
         }
         res.json(restaurant);
@@ -45,7 +45,7 @@ export const updateRestaurantController = async (req: Request, res: Response): P
         const restaurant: Restaurant = req.body;
         const updatedRestaurant = await updateRestaurant(id, restaurant);
         if (!updatedRestaurant) {
-            res.status(404).json({ message: 'Restaurante no encontrado' });
+            res.status(404).json({ message: 'Restaurante no encontrado UPDATE' });
             return;
         }
         res.json(updatedRestaurant);
