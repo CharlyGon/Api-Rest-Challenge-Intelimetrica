@@ -1,6 +1,6 @@
 import { sequelize } from "./dbConfig";
 
-const databaseConnection = async () => {
+export const databaseConnection = async () => {
     try {
         await sequelize.authenticate();
         console.log("Connection has been established successfully.");
@@ -11,5 +11,3 @@ const databaseConnection = async () => {
         console.error("Unable to connect to the database:", error);
     }
 }
-
-export { databaseConnection };

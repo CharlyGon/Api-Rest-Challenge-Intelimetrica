@@ -15,7 +15,7 @@ interface RestaurantAttributes {
     lng: number;
 }
 
-class Restaurant extends Model<RestaurantAttributes> implements RestaurantAttributes {
+export class Restaurant extends Model<RestaurantAttributes> implements RestaurantAttributes {
     public id!: number;
     public rating!: number;
     public name!: string;
@@ -54,5 +54,3 @@ Restaurant.init(
         timestamps: false, //enable/disable fields timestamp (createdAt y updatedAt)
     }
 );
-
-export { Restaurant };
