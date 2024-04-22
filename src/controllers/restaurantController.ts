@@ -7,8 +7,8 @@ export const getAllRestaurantsController = async (req: Request, res: Response): 
         const restaurants = await getAllRestaurants();
         res.json(restaurants);
     } catch (error) {
-        console.error('Error al obtener todos los restaurantes:', error);
-        res.status(500).json({ message: 'Error interno del servidor' });
+        console.error('Error when getting all restaurants:', error);
+        res.status(500).json({ message: 'Internal server error' });
     }
 };
 
@@ -17,13 +17,13 @@ export const getRestaurantByIdController = async (req: Request, res: Response): 
     try {
         const restaurant = await getRestaurantById(id);
         if (!restaurant) {
-            res.status(404).json({ message: 'Restaurante no encontrado GET BY ID' });
+            res.status(404).json({ message: 'Restaurant not found' });
             return;
         }
         res.json(restaurant);
     } catch (error) {
-        console.error('Error al obtener el restaurante por ID:', error);
-        res.status(500).json({ message: 'Error interno del servidor' });
+        console.error('Error when getting the restaurant by ID:', error);
+        res.status(500).json({ message: 'Internal server error' });
     }
 };
 
@@ -33,8 +33,8 @@ export const createRestaurantController = async (req: Request, res: Response): P
         const newRestaurant = await createRestaurant(restaurant);
         res.status(201).json(newRestaurant);
     } catch (error) {
-        console.error('Error al crear el restaurante:', error);
-        res.status(500).json({ message: 'Error interno del servidor' });
+        console.error('Error when creating the restaurant:', error);
+        res.status(500).json({ message: 'Internal server error' });
     }
 
 };
@@ -45,13 +45,13 @@ export const updateRestaurantController = async (req: Request, res: Response): P
         const restaurant: Restaurant = req.body;
         const updatedRestaurant = await updateRestaurant(id, restaurant);
         if (!updatedRestaurant) {
-            res.status(404).json({ message: 'Restaurante no encontrado UPDATE' });
+            res.status(404).json({ message: 'Restaurant not found UPDATE' });
             return;
         }
         res.json(updatedRestaurant);
     } catch (error) {
-        console.error('Error al actualizar el restaurante:', error);
-        res.status(500).json({ message: 'Error interno del servidor' });
+        console.error('Error when updating the restaurant:', error);
+        res.status(500).json({ message: 'Internal server error' });
     }
 };
 
@@ -60,12 +60,12 @@ export const deleteRestaurantController = async (req: Request, res: Response): P
         const { id } = req.params;
         const deleted = await deleteRestaurant(id);
         if (!deleted) {
-            res.status(404).json({ message: 'Restaurante no encontrado' });
+            res.status(404).json({ message: 'Restaurant not found' });
             return;
         }
-        res.json({ message: 'Restaurante eliminado correctamente' });
+        res.json({ message: 'Restaurant removed correctly' });
     } catch (error) {
-        console.error('Error al eliminar el restaurante:', error);
-        res.status(500).json({ message: 'Error interno del servidor' });
+        console.error('Error when deleting the restaurant:', error);
+        res.status(500).json({ message: 'Internal server error' });
     }
 };

@@ -16,7 +16,7 @@ export const calculateRestaurantStatistics = async (latitude: number, longitude:
             std: standardDeviation,
         };
     } catch (error) {
-        console.error('Error al calcular estadísticas del restaurante:', error);
+        console.error('Error when calculating restaurant statistics:', error);
         throw error;
     }
 };

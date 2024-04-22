@@ -5,7 +5,7 @@ export const getRestaurantStatisticsController = async (req: Request, res: Respo
     try {
         const { latitud, longitud, radio } = req.query;
         if (!latitud || !longitud || !radio) {
-            res.status(400).json({ error: 'Los parámetros latitud, longitud y radio son obligatorios' });
+            res.status(400).json({ error: 'Latitude, longitude and radius parameters are mandatory' });
             return;
         }
 

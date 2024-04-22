@@ -5,7 +5,7 @@ export const getAllRestaurants = async () => {
         const restaurants = await Restaurant.findAll();
         return restaurants;
     } catch (error) {
-        console.error('Error al obtener todos los restaurantes:', error);
+        console.error('Error when getting all restaurants:', error);
         return null;
     }
 }
@@ -15,7 +15,7 @@ export const getRestaurantById = async (id: string) => {
         const restaurant = await Restaurant.findByPk(id);
         return restaurant;
     } catch (error) {
-        console.error('Error al obtener el restaurante por ID:', error);
+        console.error('Error when getting the restaurant by ID:', error);
         return null;
     }
 }
@@ -25,7 +25,7 @@ export const createRestaurant = async (restaurant: Restaurant) => {
         const newRestaurant = await Restaurant.create(restaurant);
         return newRestaurant;
     } catch (error) {
-        console.error('Error al crear el restaurante:', error);
+        console.error('Error when creating the restaurant:', error);
         return null;
     }
 }
@@ -38,7 +38,7 @@ export const updateRestaurant = async (id: string, restaurant: Restaurant) => {
         }
         return restaurant;
     } catch (error) {
-        console.error('Error al actualizar el restaurante:', error);
+        console.error('Error when updating the restaurant:', error);
         return null;
     }
 }
@@ -51,7 +51,7 @@ export const deleteRestaurant = async (id: string) => {
         }
         return true;
     } catch (error) {
-        console.error('Error al eliminar el restaurante:', error);
+        console.error('Error when deleting the restaurant:', error);
         return false;
     }
 }
