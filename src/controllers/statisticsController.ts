@@ -1,6 +1,11 @@
 import { Request, Response } from 'express';
 import { calculateRestaurantStatistics } from '../service/statisticsService';
 
+/**
+ * Get the statistics of the restaurants in a given area.
+ * @param req The request object.
+ * @param res The response object.
+ */
 export const getRestaurantStatisticsController = async (req: Request, res: Response): Promise<void> => {
     try {
         const { latitud, longitud, radio } = req.query;

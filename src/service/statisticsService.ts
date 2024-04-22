@@ -1,7 +1,13 @@
 import { Op } from 'sequelize';
 import { Restaurant } from '../models/Restaurant';
 import { ConversionFactors } from '../utils/enums';
-
+/**
+ *  Calculate the statistics of the restaurants within a certain radius of a location.
+ * @param latitude  The latitude of the location.
+ * @param longitude  The longitude of the location.
+ * @param radius  The radius in kilometers.
+ * @returns  An object with the count of restaurants, the average rating and the standard deviation.
+ */
 export const calculateRestaurantStatistics = async (latitude: number, longitude: number, radius: number) => {
     try {
         const { minLatitude, maxLatitude, minLongitude, maxLongitude } = calculateCoordinatesRange(latitude, longitude, radius);

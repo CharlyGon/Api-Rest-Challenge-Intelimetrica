@@ -1,5 +1,8 @@
 import { sequelize } from "./dbConfig";
 
+/**
+ * Establishes a connection to the database and synchronizes the models.
+ */
 export const databaseConnection = async () => {
     try {
         await sequelize.authenticate();

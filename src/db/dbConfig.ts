@@ -1,7 +1,9 @@
 import { Sequelize } from "sequelize";
 require('dotenv').config();
 
-// Configuration for the database connection
+/**
+ * Configuration for the database connection.
+ */
 export const sequelize = new Sequelize({
     dialect: 'mysql',
     host: process.env.DB_HOST ?? "localhost",

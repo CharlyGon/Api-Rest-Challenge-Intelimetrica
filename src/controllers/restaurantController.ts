@@ -2,6 +2,11 @@ import { Request, Response } from 'express';
 import { Restaurant } from '../models/Restaurant';
 import { getAllRestaurants, getRestaurantById, createRestaurant, updateRestaurant, deleteRestaurant } from '../service/restaurantCrudService';
 
+/**
+ * Get all the restaurants.
+ * @param req The request object.
+ * @param res The response object.
+ */
 export const getAllRestaurantsController = async (req: Request, res: Response): Promise<void> => {
     try {
         const restaurants = await getAllRestaurants();
@@ -12,6 +17,11 @@ export const getAllRestaurantsController = async (req: Request, res: Response): 
     }
 };
 
+/**
+ * Get a restaurant by its ID.
+ * @param req The request object.
+ * @param res The response object.
+ */
 export const getRestaurantByIdController = async (req: Request, res: Response): Promise<void> => {
     const { id } = req.params;
     try {
@@ -27,6 +37,11 @@ export const getRestaurantByIdController = async (req: Request, res: Response): 
     }
 };
 
+/**
+ * Create a new restaurant.
+ * @param req The request object.
+ * @param res The response object.
+ */
 export const createRestaurantController = async (req: Request, res: Response): Promise<void> => {
     try {
         const restaurant: Restaurant = req.body;
@@ -39,6 +54,11 @@ export const createRestaurantController = async (req: Request, res: Response): P
 
 };
 
+/**
+ * Update a restaurant.
+ * @param req The request object.
+ * @param res The response object.
+ */
 export const updateRestaurantController = async (req: Request, res: Response): Promise<void> => {
     try {
         const { id } = req.params;
@@ -55,6 +75,11 @@ export const updateRestaurantController = async (req: Request, res: Response): P
     }
 };
 
+/**
+ * Delete a restaurant.
+ * @param req The request object.
+ * @param res The response object.
+ */
 export const deleteRestaurantController = async (req: Request, res: Response): Promise<void> => {
     try {
         const { id } = req.params;

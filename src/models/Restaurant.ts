@@ -14,7 +14,9 @@ interface RestaurantAttributes {
     lat: number;
     lng: number;
 }
-
+/**
+ * The Restaurant model.
+ */
 export class Restaurant extends Model<RestaurantAttributes> implements RestaurantAttributes {
     public id!: number;
     public rating!: number;

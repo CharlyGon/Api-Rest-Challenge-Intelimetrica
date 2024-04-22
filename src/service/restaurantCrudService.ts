@@ -1,5 +1,9 @@
 import { Restaurant } from '../models/Restaurant';
 
+/**
+ * Get all the restaurants.
+ * @returns An array with all the restaurants.
+ */
 export const getAllRestaurants = async () => {
     try {
         const restaurants = await Restaurant.findAll();
@@ -10,6 +14,11 @@ export const getAllRestaurants = async () => {
     }
 }
 
+/**
+ * Get a restaurant by its ID.
+ * @param id The ID of the restaurant.
+ * @returns The restaurant with the given ID.
+ */
 export const getRestaurantById = async (id: string) => {
     try {
         const restaurant = await Restaurant.findByPk(id);
@@ -20,6 +29,11 @@ export const getRestaurantById = async (id: string) => {
     }
 }
 
+/**
+ * Create a new restaurant.
+ * @param restaurant The restaurant to create.
+ * @returns The created restaurant.
+ */
 export const createRestaurant = async (restaurant: Restaurant) => {
     try {
         const newRestaurant = await Restaurant.create(restaurant);
@@ -30,6 +44,12 @@ export const createRestaurant = async (restaurant: Restaurant) => {
     }
 }
 
+/**
+ * Update a restaurant.
+ * @param id The ID of the restaurant.
+ * @param restaurant The restaurant data to update.
+ * @returns The updated restaurant.
+ */
 export const updateRestaurant = async (id: string, restaurant: Restaurant) => {
     try {
         const [rows] = await Restaurant.update(restaurant, { where: { id } });
@@ -43,6 +63,11 @@ export const updateRestaurant = async (id: string, restaurant: Restaurant) => {
     }
 }
 
+/**
+ * Delete a restaurant.
+ * @param id The ID of the restaurant to delete.
+ * @returns True if the restaurant was deleted, false if not.
+ */
 export const deleteRestaurant = async (id: string) => {
     try {
         const rows = await Restaurant.destroy({ where: { id } });

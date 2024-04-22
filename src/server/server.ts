@@ -23,6 +23,10 @@ const waitForDatabase = async (): Promise<void> => {
     process.exit(1);
 };
 
+/**
+ * Start the server.
+ * @param app The Express application to start.
+ */
 export const startServer = async (app: Application): Promise<void> => {
     try {
         await waitForDatabase();
