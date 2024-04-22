@@ -7,6 +7,7 @@
   - [Tarea 2: Punto Final de Estadísticas](#tarea-2-punto-final-de-estadísticas)
   - [Instalación](#instalación)
   - [Configuración de Variables de Entorno](#configuración-de-variables-de-entorno)
+  - [Uso](#uso)
     - [Endpoints de la API](#endpoints-de-la-api)
       - [Parámetros para el endpoint GET /api/v1/restaurants/statistics:](#parámetros-para-el-endpoint-get-apiv1restaurantsstatistics)
     - [Ejemplos de Uso](#ejemplos-de-uso)
