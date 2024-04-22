@@ -92,27 +92,20 @@ Antes de ejecutar la aplicación, asegúrate de configurar las siguientes variab
 
 Puedes configurar estas variables de entorno utilizando un archivo `.env` en el directorio raíz del proyecto.
 
-Claro, aquí tienes una sección de "Uso" para incluir en tu archivo `README.md`:
-
-```markdown
 ## Uso
 
 Una vez que hayas configurado las variables de entorno, puedes iniciar la aplicación localmente con el siguiente comando:
-
-```
+```markdown
 npm start
 ```
+Esto iniciará el servidor y podrás acceder a la API desde tu navegador o herramienta de prueba de API (Postman).
 
-Esto iniciará el servidor y podrás acceder a la API desde tu navegador o herramienta de prueba de API.
 
 Si prefieres ejecutar la aplicación en contenedores Docker, puedes utilizar el siguiente comando para iniciarla:
-
 ```
 docker-compose up
 ```
-
 Esto levantará los contenedores Docker con la configuración especificada en el archivo `docker-compose.yml`.
-```
 
 ### Endpoints de la API
 
